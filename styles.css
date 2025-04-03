@@ -1,0 +1,277 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and container styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #cccccc;
+}
+
+/* Main content styles */
+main {
+    padding: 40px 0;
+}
+
+.details, .about, .gallery, .feedback, .cta {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.details p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.details strong {
+    color: #00b4d8;
+}
+
+.about p {
+    font-size: 1.1em;
+    color: #cccccc;
+}
+
+/* Gallery styles */
+.gallery-images {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-images img {
+    max-width: 100%;
+    height: auto;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Feedback carousel styles */
+.feedback-carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.feedback-items {
+    position: relative;
+    overflow: hidden;
+}
+
+.feedback-item {
+    display: none;
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+.feedback-item.active {
+    display: block;
+}
+
+.feedback-item p {
+    font-size: 1.1em;
+    color: #cccccc;
+}
+
+.feedback-item cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #00b4d8;
+    font-style: normal;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #00b4d8;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.2em;
+}
+
+.carousel-prev {
+    left: -40px;
+}
+
+.carousel-next {
+    right: -40px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: #0093b0;
+}
+
+/* Call to Action (CTA) styles */
+.cta {
+    text-align: center;
+}
+
+.cta p {
+    font-size: 1.1em;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #00b4d8;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0093b0;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #ffffff;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    color: #cccccc;
+    font-size: 0.9em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .details p, .about p, .cta p {
+        font-size: 1em;
+    }
+
+    .gallery-images img {
+        width: 250px;
+    }
+
+    .button {
+        display: block;
+        margin: 10px auto;
+        width: 200px;
+    }
+
+    .carousel-prev {
+        left: 0;
+    }
+
+    .carousel-next {
+        right: 0;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    main {
+        padding: 20px 0;
+    }
+
+    .gallery-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-images img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
