@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enclave Logistics - Same Day Courier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>Enclave Logistics</h1>
+            <p class="tagline">Fast, Reliable, Same-Day Courier Services in Wakefield</p>
+            <a href="#booking" class="button cta-button">Book Now</a>
+        </header>
+
+        <main>
+            <section class="trust-badges">
+                <p>🚚 Fully Insured &bullet; 📍 GPS Tracked &bullet; ⭐ 5-Star Rated</p>
+            </section>
+
+            <section class="details" id="contact">
+                <h2>Contact Us</h2>
+                <p><strong>Phone:</strong> <a href="tel:+441234567890">+44 123 456 7890</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@enclavelogistics.com">info@enclavelogistics.com</a></p>
+                <p><strong>Location:</strong> Wakefield, UK</p>
+            </section>
+
+            <section class="about">
+                <h2>About Us</h2>
+                <p>We provide rapid, same-day courier services throughout the UK. From urgent documents to large parcels, we guarantee prompt, secure delivery from Wakefield and beyond.</p>
+            </section>
+
+            <section class="gallery">
+                <h2>Our Fleet</h2>
+                <div class="gallery-images">
+                    <img src="van1.jpg" alt="Courier Van 1" class="gallery-img" />
+                    <img src="van2.jpg" alt="Courier Van 2" class="gallery-img" />
+                </div>
+            </section>
+
+            <section class="feedback">
+                <h2>Customer Feedback</h2>
+                <div class="feedback-carousel">
+                    <div class="feedback-items">
+                        <blockquote class="feedback-item active">
+                            <p>"Super fast delivery, saved my day! Highly recommend Enclave Logistics."</p>
+                            <cite>- John D., Leeds</cite>
+                        </blockquote>
+                        <blockquote class="feedback-item">
+                            <p>"Professional and reliable service. Will use again!"</p>
+                            <cite>- Sarah M., Wakefield</cite>
+                        </blockquote>
+                    </div>
+                    <button class="carousel-prev">❮</button>
+                    <button class="carousel-next">❯</button>
+                </div>
+            </section>
+
+            <section class="booking" id="booking">
+                <h2>Book a Delivery</h2>
+                <p>Fill out the form and we'll get back to you with a quote shortly.</p>
+                <form class="booking-form" action="mailto:info@enclavelogistics.com" method="POST" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="tel" name="phone" placeholder="Phone Number" required />
+                    <input type="email" name="email" placeholder="Email Address" required />
+                    <textarea name="details" placeholder="Delivery Details (pickup, dropoff, timing)" rows="4" required></textarea>
+                    <button type="submit">Send Request</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Enclave Logistics. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div class="modal" id="imageModal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage" />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
