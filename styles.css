@@ -23,7 +23,6 @@ body {
 .nav {
   display: flex;
   gap: 1rem;
-  transition: transform 0.3s ease-in-out;
 }
 .nav a {
   color: white;
@@ -49,14 +48,12 @@ body {
 #nav-toggle:checked ~ .nav,
 .nav.open {
   display: flex;
-  transform: translateY(0);
 }
 .hero {
   background: #0055A4;
   color: white;
   text-align: center;
   padding: 3rem 1rem;
-  position: relative;
 }
 .hero h1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
@@ -178,7 +175,6 @@ body {
     top: 5rem;
     left: 0;
     padding: 1rem;
-    transform: translateY(-100%);
   }
   .nav a {
     font-size: 1.2rem;
