@@ -12,16 +12,16 @@
       <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
       <label for="nav-toggle" class="hamburger">☰</label>
       <div class="nav">
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
   </div>
   <div class="hero">
     <h1>Same-Day Courier You Can Trust!</h1>
     <p>Fast, Reliable B2B Deliveries in Wakefield</p>
-    <button>Get a Quote</button>
+    <button onclick="scrollToContact()">Get a Quote</button>
   </div>
   <div class="services">
     <h2>Our Services</h2>
@@ -30,17 +30,19 @@
       <li>Horbury-based, with local Wakefield expertise.</li>
       <li>Flexible and urgent delivery solutions.</li>
     </ul>
+    <p><a href="services.html">Learn more about our services</a></p>
   </div>
   <div class="contact">
     <h2>Contact Us</h2>
     <p>Owner: Kyle Ayton-Laplanche</p>
     <p>Phone: 07883777217</p>
     <p>Email: info@enclavelogistics.com</p>
-    <form>
-      <input type="text" placeholder="Name">
-      <input type="email" placeholder="Email">
-      <textarea placeholder="Message"></textarea>
-      <button>Submit</button>
+    <form action="https://formspree.io/f/{your-form-id}" method="POST">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Message" required></textarea>
+      <input type="hidden" name="_next" value="thank-you.html">
+      <button type="submit">Submit</button>
     </form>
   </div>
   <div class="footer">
