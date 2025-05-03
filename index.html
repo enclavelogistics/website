@@ -1,86 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enclave Logistics - Same Day Courier</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enclave Logistics Limited</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .header {
+      background: #0055A4;
+      color: white;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .header img {
+      height: 3rem;
+      max-width: 100%;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+    }
+    .nav {
+      display: flex;
+      gap: 1rem;
+      transition: transform 0.3s ease-in-out;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      transition: color 0.3s;
+    }
+    .nav a:hover {
+      color: #FFC107;
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    #nav-toggle {
+      display: none;
+    }
+    #nav-toggle:checked ~ .nav,
+    .nav.open {
+      display: flex;
+      transform: translateY(0);
+    }
+    .hero {
+      background: #0055A4;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('wakefield-map.png') center/cover;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    .hero h1 {
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .hero p {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      margin: 0.5rem 0;
+      position: relative;
+      z-index: 1;
+    }
+    .hero button {
+      background: #FFC107;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+    .hero button:hover {
+      background: #e0a800;
+    }
+    .services {
+      background: white;
+      color: #0055A4;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .services h2 {
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      margin-bottom: 1.5rem;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .services li {
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      margin: 0.75rem 0;
+      position: relative;
+      padding-left: 2rem;
+    }
+    .services li::before {
+      content: '📦';
+      position: absolute;
+      left: 0;
+      color: #FFC107;
+    }
+    .contact {
+      background: #0055A4;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .contact h2 {
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      margin-bottom: 1.5rem;
+    }
+    .contact p {
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      margin: 0.5rem 0;
+    }
+    .contact form {
+      max-width: 500px;
+      margin: 1.5rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      font-size: 1rem;
+      border-radius: 4px;
+    }
+    .contact textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .contact button {
+      background: #FFC107;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .contact button:hover {
+      background: #e0a800;
+    }
+    .footer {
+      background: #FFFFFF;
+      color: #0055A4;
+      text-align: center;
+      padding: 1rem;
+      font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+      position: relative;
+    }
+    .footer img {
+      height: 2rem;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .hamburger {
+        display: block;
+      }
+      .nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: #0055A4;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        padding: 1rem;
+        transform: translateY(-100%);
+      }
+      .nav a {
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+      }
+      .hero {
+        padding: 2rem 1rem;
+      }
+      .services ul {
+        max-width: 90%;
+      }
+      .contact form {
+        max-width: 90%;
+      }
+      .footer img {
+        height: 1.5rem;
+        right: 0.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1.2rem;
+      }
+      .hero button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+      }
+      .services li {
+        padding-left: 1.5rem;
+      }
+      .contact input,
+      .contact textarea {
+        padding: 0.5rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .header {
+        padding: 2rem 5%;
+      }
+      .hero {
+        padding: 4rem 5%;
+      }
+      .services,
+      .contact {
+        padding: 3rem 5%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="hero">
-            <h1>Enclave Logistics</h1>
-            <p class="tagline">Fast, Reliable, Same-Day Courier Services in Wakefield</p>
-            <a href="#booking" class="button cta-button">Book Now</a>
-        </header>
-
-        <main>
-            <section class="trust-badges">
-                <p>🚚 Fully Insured &bullet; 📍 GPS Tracked &bullet; ⭐ 5-Star Rated</p>
-            </section>
-
-            <section class="details" id="contact">
-                <h2>Contact Us</h2>
-                <p><strong>Phone:</strong> <a href="tel:+441234567890">+44 123 456 7890</a></p>
-                <p><strong>Email:</strong> <a href="mailto:info@enclavelogistics.com">info@enclavelogistics.com</a></p>
-                <p><strong>Location:</strong> Wakefield, UK</p>
-            </section>
-
-            <section class="about">
-                <h2>About Us</h2>
-                <p>We provide rapid, same-day courier services throughout the UK. From urgent documents to large parcels, we guarantee prompt, secure delivery from Wakefield and beyond.</p>
-            </section>
-
-            <section class="gallery">
-                <h2>Our Fleet</h2>
-                <div class="gallery-images">
-                    <img src="van1.jpg" alt="Courier Van 1" class="gallery-img" />
-                    <img src="van2.jpg" alt="Courier Van 2" class="gallery-img" />
-                </div>
-            </section>
-
-            <section class="feedback">
-                <h2>Customer Feedback</h2>
-                <div class="feedback-carousel">
-                    <div class="feedback-items">
-                        <blockquote class="feedback-item active">
-                            <p>"Super fast delivery, saved my day! Highly recommend Enclave Logistics."</p>
-                            <cite>- John D., Leeds</cite>
-                        </blockquote>
-                        <blockquote class="feedback-item">
-                            <p>"Professional and reliable service. Will use again!"</p>
-                            <cite>- Sarah M., Wakefield</cite>
-                        </blockquote>
-                    </div>
-                    <button class="carousel-prev">❮</button>
-                    <button class="carousel-next">❯</button>
-                </div>
-            </section>
-
-            <section class="booking" id="booking">
-                <h2>Book a Delivery</h2>
-                <p>Fill out the form and we'll get back to you with a quote shortly.</p>
-                <form class="booking-form" action="mailto:info@enclavelogistics.com" method="POST" enctype="text/plain">
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="tel" name="phone" placeholder="Phone Number" required />
-                    <input type="email" name="email" placeholder="Email Address" required />
-                    <textarea name="details" placeholder="Delivery Details (pickup, dropoff, timing)" rows="4" required></textarea>
-                    <button type="submit">Send Request</button>
-                </form>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2025 Enclave Logistics. All rights reserved.</p>
-        </footer>
+  <div class="header">
+    <img src="logo.png" alt="Enclave Logistics Limited">
+    <div class="nav-container">
+      <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+      <label for="nav-toggle" class="hamburger">☰</label>
+      <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </div>
     </div>
-
-    <div class="modal" id="imageModal">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modalImage" />
-    </div>
-
-    <script src="script.js"></script>
+  </div>
+  <div class="hero">
+    <h1>Same-Day Courier You Can Trust!</h1>
+    <p>Fast, Reliable B2B Deliveries in Wakefield</p>
+    <button>Get a Quote</button>
+  </div>
+  <div class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Same-day B2B deliveries at competitive rates.</li>
+      <li>Horbury-based, with local Wakefield expertise.</li>
+      <li>Flexible and urgent delivery solutions.</li>
+    </ul>
+  </div>
+  <div class="contact">
+    <h2>Contact Us</h2>
+    <p>Owner: Kyle Ayton-Laplanche</p>
+    <p>Phone: 07883777217</p>
+    <p>Email: info@enclavelogistics.com</p>
+    <form>
+      <input type="text" placeholder="Name">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Message"></textarea>
+      <button>Submit</button>
+    </form>
+  </div>
+  <div class="footer">
+    <p>© 2025 Enclave Logistics Limited. Horbury, Wakefield, UK.</p>
+    <img src="qr-code.png" alt="QR Code">
+  </div>
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
