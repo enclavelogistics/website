@@ -86,11 +86,16 @@ body {
   font-size: clamp(1.2rem, 4vw, 1.8rem);
   margin-bottom: 1.5rem;
 }
+.services p {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  margin: 0.5rem auto;
+  max-width: 600px;
+}
 .services ul {
   list-style: none;
   padding: 0;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 .services li {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
