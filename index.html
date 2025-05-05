@@ -1,70 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Same-Day B2B Courier Services | Reliable & Fast Local Delivery</title>
-    <meta name="description" content="Professional one-man courier service specializing in same-day B2B deliveries. Serving local businesses with speed, reliability, and personal care.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preload" href="styles.css" as="style">
-
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="Same-Day B2B Courier Services">
-    <meta property="og:description" content="Serving your local area with fast, reliable deliveries.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.com/">
-    <meta property="og:image" content="https://yourdomain.com/preview-image.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msvalidate.01" content="6B5AFA8DA0AB6C8C2C4F7A0C18E6D27E">
+  <title>ENCLAVE LOGISTICS LIMITED</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h1>Reliable Same-Day Courier Services</h1>
-            <p>Fast and professional B2B delivery in your local area.</p>
-            <img src="images/van-placeholder.jpg" alt="Courier van" width="800" height="500">
-        </section>
-
-        <section>
-            <h2>Why Choose Us?</h2>
-            <ul>
-                <li>Same-day deliveries</li>
-                <li>Local and trusted</li>
-                <li>Flexible and personal service</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Get a Quote or Ask a Question</h2>
-            <form action="https://formspree.io/f/movdddjq" method="POST">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your email" required>
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell us what you need..." required></textarea>
-
-                <input type="hidden" name="_redirect" value="thank-you.html">
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Enclave Logistics Limited. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <div class="header">
+    <div class="nav-container">
+      <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+      <label for="nav-toggle" class="hamburger">☰</label>
+      <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero">
+    <img src="images/hero-banner.jpg" alt="Courier van or delivery scene" class="hero-image">
+    <h1>Same-Day Courier You Can Trust!</h1>
+    <p>Fast, Reliable B2B Deliveries based in Wakefield</p>
+    <button onclick="scrollToContact()">Get a Quote</button>
+  </div>
+  <div class="services">
+    <h1>Our Services</h1>
+    <img src="placeholder.png" alt="Delivery package or van" class="section-image">
+    <p>We provide tailored B2B courier services to meet your business needs.</p>
+    <ul>
+      <li><strong>Same-Day Delivery</strong>: Urgent deliveries completed within hours, ensuring your deadlines are met.</li>
+      <li><strong>Local Expertise</strong>: Based in Horbury, our team knows Wakefield’s roads for faster, reliable service.</li>
+      <li><strong>Flexible Solutions</strong>: From ad-hoc to multi-drop deliveries, we adapt to your schedule.</li>
+      <li><strong>Secure Transport</strong>: Careful handling for high-value or sensitive goods.</li>
+    </ul>
+    <p>Ready to streamline your deliveries? Contact us today!</p>
+    <a href="contact.html" class="button">Contact Us</a>
+  </div>
+  <div class="about">
+    <h2>About Us</h2>
+    <img src="placeholder.png" alt="Enclave Logistics team or warehouse" class="section-image">
+    <p>We offer a streamlined courier service dedicated to providing fast, reliable, and secure B2B deliveries across the UK. Founded by Kyle Ayton-Laplanche, our mission is to support local businesses with tailored logistics solutions that prioritize speed and customer satisfaction.</p>
+    <p>With our deep knowledge and commitment to excellence, we ensure your deliveries are handled with care and delivered on time, every time.</p>
+  </div>
+  <div class="why-choose-us">
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li><strong>Reliability</strong>: We pride ourselves on meeting your deadlines with precision.</li>
+      <li><strong>Local Knowledge</strong>: Our Horbury base gives us an edge in navigating Wakefield efficiently.</li>
+      <li><strong>Customer Focus</strong>: Your satisfaction is our priority, with personalized service for every client.</li>
+      <li><strong>Competitive Rates</strong>: High-quality service at prices that work for your business.</li>
+    </ul>
+  </div>
+  <div class="testimonials">
+    <h2>Reviews</h2>
+    <p><em>"Enclave Logistics transformed our delivery process with their speed and reliability. Highly recommend!"</em> – Cargo2Go</p>
+    <p><em>"Kyle and his team are professional and always go the extra mile. Best courier service in Wakefield!"</em> – ParcelPal</p>
+    <p>more reviews here</p>
+  </div>
+  <div class="contact">
+    <h2>Contact Us</h2>
+    <img src="placeholder.png" alt="Office or contact scene" class="section-image">
+    <p>Kyle Ayton-Laplanche</p>
+    <p>07883777217</p>
+    <p>info@enclavelogistics.com</p>
+    <form action="https://formspree.io/f/movdddjq" method="POST">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Message" required></textarea>
+      <input type="hidden" name="_next" value="thank-you.html">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="footer">
+    <p>© 2025 ENCLAVE LOGISTICS LIMITED</p>
+  </div>
+  <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
