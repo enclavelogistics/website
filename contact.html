@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - ENCLAVE LOGISTICS LIMITED</title>
+  <title>Contact | Same-Day B2B Courier - Enclave Logistics Limited</title>
+  <meta name="description" content="Contact Enclave Logistics Limited to request a courier delivery quote or ask questions about our same-day B2B delivery services.">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Contact Us - Enclave Logistics Limited">
+  <meta property="og:description" content="Get in touch with Enclave Logistics to schedule a same-day courier service.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/contact.html">
 </head>
 <body>
   <div class="header">
@@ -25,16 +33,22 @@
     <p>07883777217</p>
     <p>info@enclavelogistics.com</p>
     <form action="https://formspree.io/f/movdddjq" method="POST">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Message" required></textarea>
-      <input type="hidden" name="_next" value="thank-you.html">
-      <button type="submit">Submit</button>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+
+      <input type="hidden" name="_redirect" value="thank-you.html">
+
+      <button type="submit">Send Message</button>
     </form>
   </div>
-  <div class="footer">
-    <p>© 2025 ENCLAVE LOGISTICS LIMITED</p>
-  </div>
-  <script type="text/javascript" src="./script.js"></script>
+  <footer>
+    <p>&copy; 2025 Enclave Logistics Limited. All rights reserved.</p>
+  </footer>
 </body>
 </html>
