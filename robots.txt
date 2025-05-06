@@ -1,18 +1,14 @@
 # Allow Googlebot explicitly to ensure compatibility with Cloudflare
 User-agent: Googlebot
-Allow: /
 Disallow: /thank-you.html
 
 # Allow other search engine bots
 User-agent: Bingbot
-Allow: /
 Disallow: /thank-you.html
 
+# General crawler rules
 User-agent: *
-Allow: /
 Disallow: /thank-you.html
-
-# Block non-essential files and GitHub-specific artifacts
 Disallow: /.github/
 Disallow: /README.md
 Disallow: /LICENSE
