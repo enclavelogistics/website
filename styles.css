@@ -24,6 +24,15 @@ body {
   display: flex;
   gap: 1rem;
 }
+.draft-banner {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-family: Arial, sans-serif;
+  border-bottom: 1px solid #ffeeba;
+}
 .nav a {
   color: white;
   text-decoration: none;
