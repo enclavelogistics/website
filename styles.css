@@ -35,10 +35,6 @@ body {
   display: flex;
 }
 
-.nav {
-  display: flex;
-  gap: 1rem;
-}
 .draft-banner {
   position: sticky;
   top: 0;
