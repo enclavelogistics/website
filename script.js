@@ -4,16 +4,6 @@ const hamburger = document.querySelector('.hamburger');
 const navToggle = document.querySelector('#nav-toggle');
 const nav = document.querySelector('.nav');
 
-// Toggle nav menu
-if (hamburger && nav) {
-  hamburger.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    console.log('Hamburger clicked, nav open:', nav.classList.contains('open'));
-  });
-} else {
-  console.error('Hamburger or nav not found');
-}
-
 // Auto-close menu when clicking outside
 document.addEventListener('click', (e) => {
   if (
@@ -23,7 +13,6 @@ document.addEventListener('click', (e) => {
     !e.target.closest('.hamburger')
   ) {
     navToggle.checked = false;
-    nav.classList.remove('open');
     console.log('Clicked outside nav, menu closed');
   }
 });
