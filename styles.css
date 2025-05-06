@@ -6,14 +6,19 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  padding-top: 6rem; /* Space for sticky banner and header */
 }
 .draft-banner {
-  background: #FFC107;
+  background: #FFCA28; /* Lighter yellow for better readability */
   color: #0055A4;
   text-align: center;
-  padding: 1rem;
-  position: relative;
+  padding: 0.75rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
   font-size: clamp(0.8rem, 2vw, 1rem);
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,6 +51,10 @@ body {
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
+  position: fixed;
+  top: 2.5rem; /* Below banner */
+  width: 100%;
+  z-index: 999;
 }
 .nav-container {
   display: flex;
@@ -268,9 +277,13 @@ body {
   font-size: clamp(0.7rem, 1.5vw, 0.9rem);
 }
 @media (max-width: 768px) {
+  body {
+    padding-top: 5rem; /* Adjust for smaller banner and header */
+  }
   .header {
     flex-direction: row;
     justify-content: flex-end;
+    top: 2rem;
   }
   .hamburger {
     display: block;
@@ -282,9 +295,10 @@ body {
     width: 100%;
     background: #0055A4;
     position: absolute;
-    top: 5rem;
+    top: 5.5rem; /* Below sticky banner and header */
     left: 0;
     padding: 1rem;
+    z-index: 998;
   }
   .nav a {
     font-size: 1.2rem;
@@ -304,6 +318,18 @@ body {
   }
 }
 @media (max-width: 480px) {
+  body {
+    padding-top: 4.5rem;
+  }
+  .draft-banner {
+    padding: 0.5rem;
+  }
+  .header {
+    top: 1.8rem;
+  }
+  .nav {
+    top: 4.8rem;
+  }
   .hero h1, .services h1, .about h2, .why-choose-us h2, .testimonials h2, .contact h1, .contact h2 {
     font-size: 1.8rem;
   }
