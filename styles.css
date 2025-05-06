@@ -7,6 +7,37 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
+.draft-banner {
+  background: #FFC107;
+  color: #0055A4;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.draft-banner p {
+  margin: 0;
+  max-width: 90%;
+}
+.draft-banner .close-banner {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #0055A4;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.draft-banner .close-banner:hover {
+  color: #e0a800;
+}
 .header {
   background: #0055A4;
   color: white;
