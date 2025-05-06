@@ -122,6 +122,16 @@ body {
 .services a.button:hover {
   background: #e0a800;
 }
+.section-image:not([src="placeholder.png"]) {
+  max-width: 100%;
+  height: auto  auto;
+  margin: 1rem auto;
+  border-radius: 8px;
+  display: block;
+}
+.section-image[src="placeholder.png"] {
+  display: none;
+}
 .section-image {
   max-width: 100%;
   height: auto;
