@@ -8,9 +8,6 @@ body {
   line-height: 1.6;
 }
 .header {
-  position: sticky;
-  top: 2.75rem; /* height of the draft banner */
-  z-index: 999;
   background: #0055A4;
   color: white;
   padding: 1.5rem;
@@ -23,29 +20,9 @@ body {
   display: flex;
   align-items: center;
 }
-
 .nav {
-  display: none;
-  flex-direction: column;
-  background-color: #0055A4;
-  padding: 1rem;
-}
-
-#nav-toggle:checked ~ .nav {
   display: flex;
-}
-
-.draft-banner {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #fff3cd;
-  color: #856404;
-  padding: 0.75rem 1rem;
-  text-align: center;
-  font-size: 0.95rem;
-  font-family: Arial, sans-serif;
-  border-bottom: 1px solid #ffeeba;
+  gap: 1rem;
 }
 .nav a {
   color: white;
