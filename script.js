@@ -1,23 +1,25 @@
 console.log('script.js loaded');
 
 const hamburger = document.querySelector('.hamburger');
-const navToggle = document.querySelector('#nav-toggle');
 const nav = document.querySelector('.nav');
 
-// Auto-close menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (
-    navToggle &&
-    navToggle.checked &&
-    !e.target.closest('.nav') &&
-    !e.target.closest('.hamburger')
-  ) {
-    navToggle.checked = false;
-    console.log('Clicked outside nav, menu closed');
-  }
-});
+if (hamburger && nav) {
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    console.log('Hamburger clicked');
+  });
 
-// Smooth scroll to contact section
+  // Close menu if clicked outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav') && !e.target.closest('.hamburger')) {
+      nav.classList.remove('open');
+      console.log('Clicked outside menu, closed');
+    }
+  });
+} else {
+  console.error('Hamburger or nav not found');
+}
+
 function scrollToContact() {
   const contactSection = document.querySelector('.contact');
   if (contactSection) {
