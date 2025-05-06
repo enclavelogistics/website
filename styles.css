@@ -8,6 +8,9 @@ body {
   line-height: 1.6;
 }
 .header {
+  position: sticky;
+  top: 2.75rem; /* height of the draft banner */
+  z-index: 999;
   background: #0055A4;
   color: white;
   padding: 1.5rem;
@@ -25,6 +28,9 @@ body {
   gap: 1rem;
 }
 .draft-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: #fff3cd;
   color: #856404;
   padding: 0.75rem 1rem;
