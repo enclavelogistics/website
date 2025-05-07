@@ -18,13 +18,13 @@ body.banner-visible {
   background: #FFC107; /* Yellow to match theme */
   color: #0055A4; /* Blue text for contrast */
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem; /* Added right padding for close button */
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2000; /* Above header (z-index: 1000) */
   display: flex; /* Default visibility */
-  justify-content: center;
+  justify-content: space-between; /* Move close button to right */
   align-items: center;
   font-size: clamp(0.8rem, 2vw, 1rem);
 }
@@ -35,6 +35,8 @@ body.banner-visible {
 
 .banner p {
   margin: 0;
+  flex-grow: 1; /* Ensure text stays centered */
+  text-align: center;
 }
 
 .banner-close {
@@ -43,7 +45,7 @@ body.banner-visible {
   color: #0055A4;
   font-size: 1.2rem;
   cursor: pointer;
-  margin-left: 1rem;
+  padding: 0 0.5rem; /* Reduced padding for right alignment */
   line-height: 1;
   transition: color 0.3s;
 }
@@ -408,12 +410,12 @@ body.banner-visible .header.sticky {
 
 @media (max-width: 768px) {
   .banner {
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
     font-size: clamp(0.7rem, 1.8vw, 0.9rem);
   }
   .banner-close {
     font-size: 1rem;
-    margin-left: 0.5rem;
+    padding: 0 0.25rem;
   }
   .header {
     flex-direction: row;
@@ -463,11 +465,12 @@ body.banner-visible .header.sticky {
 
 @media (max-width: 480px) {
   .banner {
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
     font-size: clamp(0.6rem, 1.5vw, 0.8rem);
   }
   .banner-close {
     font-size: 0.9rem;
+    padding: 0 0.2rem;
   }
   .hero h1, .services h1, .about h2, .why-choose-us h2, .testimonials h2, .contact h1, .contact h2 {
     font-size: 1.8rem;
@@ -493,7 +496,7 @@ body.banner-visible .header.sticky {
 
 @media (min-width: 1024px) {
   .banner {
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
   }
   .header {
     padding: 2rem 5%;
