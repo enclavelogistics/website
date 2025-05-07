@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Smooth scrolling for links and buttons
-  document.querySelectorAll('.nav a, .logo, .services a.button, .why-choose-us a.button, .hero button').forEach(el => {
+  document.querySelectorAll('.nav a, .logo, .services a.button, .why-choose-us a.button, .hero a.button').forEach(el => {
     el.addEventListener('click', e => {
       const href = el.getAttribute('href');
       if (!href) return; // Exit if no href
