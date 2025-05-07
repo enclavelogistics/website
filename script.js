@@ -3,20 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const banner = document.getElementById('draftBanner');
   const body = document.body;
 
-  // Show banner by default unless explicitly dismissed
-  if (localStorage.getItem('bannerDismissed') !== 'true') {
-    banner.classList.remove('hidden');
-    body.classList.add('banner-visible');
-  } else {
-    banner.classList.add('hidden');
-    body.classList.remove('banner-visible');
-  }
+  // Always show banner on load
+  banner.classList.remove('hidden');
+  body.classList.add('banner-visible');
 
   // Close banner on click
   document.querySelector('.banner-close').addEventListener('click', () => {
     banner.classList.add('hidden');
     body.classList.remove('banner-visible');
-    localStorage.setItem('bannerDismissed', 'true');
   });
 
   // Smooth scrolling for nav links, logo, and CTA buttons
