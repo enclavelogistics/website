@@ -63,12 +63,11 @@ body.banner-visible {
 .header {
   background: var(--blue);
   color: white;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem; /* Adjusted padding for better control */
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
-  min-height: 80px;
   box-sizing: border-box;
 }
 
