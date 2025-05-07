@@ -17,7 +17,7 @@ body {
 }
 
 body.banner-visible {
-  padding-top: 110px;
+  padding-top: 110px; /* Adjusted to account for banner height + header shift */
 }
 
 .banner {
@@ -33,6 +33,9 @@ body.banner-visible {
   justify-content: space-between;
   align-items: center;
   font-size: clamp(0.8rem, 2vw, 1rem);
+  max-height: 80px; /* Cap the banner height */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent content overflow */
 }
 
 .banner.hidden {
@@ -82,7 +85,7 @@ body.banner-visible {
 }
 
 body.banner-visible .header.sticky {
-  top: 30px;
+  top: 80px; /* Shift header below the 80px banner */
 }
 
 .nav-container {
@@ -370,7 +373,8 @@ main.contact {
 
 @media (min-width: 1024px) {
   .banner {
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem; /* Fixed padding to control height */
+    font-size: 1rem; /* Cap font-size at 1rem */
   }
   .header, .hero, .services, .about, .why-choose-us, .testimonials, .contact {
     padding: 2rem 5% 4rem;
