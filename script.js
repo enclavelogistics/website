@@ -2,17 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle banner dismissal
   const banner = document.getElementById('draftBanner');
   const header = document.querySelector('.header.sticky');
-  const bannerClose = document.querySelector('.banner-close');
 
-  // Check if banner was previously dismissed
+  // Only hide banner if explicitly dismissed
   if (localStorage.getItem('bannerDismissed') === 'true') {
     banner.style.display = 'none';
     header.classList.add('no-banner');
     document.body.style.paddingTop = '80px';
+  } else {
+    banner.style.display = 'flex'; // Ensure visibility on first load
   }
 
   // Close banner on click
-  bannerClose.addEventListener('click', () => {
+  document.querySelector('.banner-close').addEventListener('click', () => {
     banner.style.display = 'none';
     header.classList.add('no-banner');
     document.body.style.paddingTop = '80px';
