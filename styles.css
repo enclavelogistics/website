@@ -276,6 +276,15 @@ body.banner-visible .header.sticky {
   padding: 1.5rem;
   font-size: clamp(0.7rem, 1.5vw, 0.9rem);
 }
+.footer a {
+  color: var(--yellow); /* Matches your brand color */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: var(--dark-yellow); /* Matches hover effect used elsewhere */
+}
 
 @media (max-width: 768px) {
   .banner {
