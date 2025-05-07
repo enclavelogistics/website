@@ -7,7 +7,41 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  padding-top: 80px;
+  padding-top: 110px; /* Adjusted for banner (30px) + header (80px) */
+}
+
+.banner {
+  background: #FFC107; /* Yellow to match theme */
+  color: #0055A4; /* Blue text for contrast */
+  text-align: center;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000; /* Above header (z-index: 1000) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.banner p {
+  margin: 0;
+}
+
+.banner-close {
+  background: none;
+  border: none;
+  color: #0055A4;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.banner-close:hover {
+  color: #e0a800; /* Darker yellow on hover */
 }
 
 .header {
@@ -22,10 +56,15 @@ body {
 
 .header.sticky {
   position: fixed;
-  top: 0;
+  top: 30px; /* Below banner initially */
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s ease; /* Smooth shift when banner closes */
+}
+
+.header.sticky.no-banner {
+  top: 0; /* Move to top when banner is closed */
 }
 
 .nav-container {
@@ -56,7 +95,7 @@ body {
 .nav {
   display: flex;
   gap: 1rem;
-  transition: opacity 0.3s ease; /* NEW: Smooth fade for open/close */
+  transition: opacity 0.3s ease;
 }
 
 .nav a {
@@ -87,7 +126,7 @@ body {
 #nav-toggle:checked ~ .nav,
 .nav.open {
   display: flex;
-  opacity: 1; /* NEW: Ensure visible when open */
+  opacity: 1;
 }
 
 .hero {
@@ -360,6 +399,14 @@ body {
 }
 
 @media (max-width: 768px) {
+  .banner {
+    padding: 0.75rem;
+    font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+  }
+  .banner-close {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
   .header {
     flex-direction: row;
     justify-content: flex-end;
@@ -377,7 +424,7 @@ body {
     top: 80px;
     left: 0;
     padding: 1rem;
-    opacity: 0; /* NEW: Hidden by default */
+    opacity: 0;
   }
   .nav a {
     font-size: 1.2rem;
@@ -385,7 +432,8 @@ body {
   }
   #nav-toggle:checked ~ .nav,
   .nav.open {
-    opacity: 1; /* NEW: Visible when open */
+    opacity: 1;
+    display: flex;
   }
   .logo {
     font-size: clamp(1rem, 2vw, 1.2rem);
@@ -406,6 +454,13 @@ body {
 }
 
 @media (max-width: 480px) {
+  .banner {
+    padding: 0.5rem;
+    font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+  }
+  .banner-close {
+    font-size: 0.9rem;
+  }
   .hero h1, .services h1, .about h2, .why-choose-us h2, .testimonials h2, .contact h1, .contact h2 {
     font-size: 1.8rem;
   }
@@ -429,6 +484,9 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .banner {
+    padding: 0.75rem;
+  }
   .header {
     padding: 2rem 5%;
   }
