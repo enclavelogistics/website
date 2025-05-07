@@ -1,22 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Handle banner dismissal
   const banner = document.getElementById('draftBanner');
-  const header = document.querySelector('.header.sticky');
+  const body = document.body;
 
-  // Only hide banner if explicitly dismissed
-  if (localStorage.getItem('bannerDismissed') === 'true') {
-    banner.style.display = 'none';
-    header.classList.add('no-banner');
-    document.body.style.paddingTop = '80px';
+  // Show banner by default unless explicitly dismissed
+  if (localStorage.getItem('bannerDismissed') !== 'true') {
+    banner.classList.remove('hidden');
+    body.classList.add('banner-visible');
   } else {
-    banner.style.display = 'flex'; // Ensure visibility on first load
+    banner.classList.add('hidden');
+    body.classList.remove('banner-visible');
   }
 
   // Close banner on click
   document.querySelector('.banner-close').addEventListener('click', () => {
-    banner.style.display = 'none';
-    header.classList.add('no-banner');
-    document.body.style.paddingTop = '80px';
+    banner.classList.add('hidden');
+    body.classList.remove('banner-visible');
     localStorage.setItem('bannerDismissed', 'true');
   });
 
