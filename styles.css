@@ -20,10 +20,6 @@ body.banner-visible {
   padding-top: 110px;
 }
 
-main.contact {
-  padding-top: 6rem; /* Increase top padding to push content down */
-}
-
 .banner {
   background: var(--yellow);
   color: var(--blue);
@@ -67,12 +63,13 @@ main.contact {
 .header {
   background: var(--blue);
   color: white;
-  padding: 1rem 1.5rem;
-  min-height: 80px;
+  padding: 1.5rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
+  min-height: 80px;
+  box-sizing: border-box;
 }
 
 .header.sticky {
@@ -117,7 +114,7 @@ body.banner-visible .header.sticky {
   display: flex;
   gap: 1rem;
   transition: opacity 0.3s ease;
-  justify-content: center;
+  align-items: center;
 }
 
 .nav a {
@@ -156,6 +153,10 @@ body.banner-visible .header.sticky {
   color: white;
   text-align: center;
   padding: 4rem 1rem;
+}
+
+main.contact {
+  padding-top: 6rem;
 }
 
 .hero-image, .section-image:not([src="placeholder.png"]) {
@@ -282,14 +283,15 @@ body.banner-visible .header.sticky {
   padding: 1.5rem;
   font-size: clamp(0.7rem, 1.5vw, 0.9rem);
 }
+
 .footer a {
-  color: var(--yellow); /* Matches your brand color */
+  color: var(--yellow);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .footer a:hover {
-  color: var(--dark-yellow); /* Matches hover effect used elsewhere */
+  color: var(--dark-yellow);
 }
 
 @media (max-width: 768px) {
