@@ -3,10 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  padding-top: 80px; /* NEW: Offset for sticky header height */
 }
+
 .header {
   background: #0055A4;
   color: white;
@@ -16,23 +19,57 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
+
+.header.sticky {
+  position: fixed; /* NEW: Make header sticky */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure header stays above content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* NEW: Subtle shadow for depth */
+}
+
 .nav-container {
   display: flex;
   align-items: center;
+  position: relative; /* NEW: Context for logo positioning */
+  width: 100%; /* Ensure container spans header */
+  justify-content: flex-end; /* Keep nav/hamburger right-aligned */
 }
+
+.logo {
+  /* NEW: Style for text logo */
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase; /* Match professional branding */
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: #FFC107; /* Match nav hover color */
+}
+
 .nav {
   display: flex;
   gap: 1rem;
 }
+
 .nav a {
   color: white;
   text-decoration: none;
   font-size: clamp(0.8rem, 2vw, 1rem);
   transition: color 0.3s;
 }
+
 .nav a:hover {
   color: #FFC107;
 }
+
 .hamburger {
   display: none;
   font-size: 1.5rem;
@@ -42,33 +79,40 @@ body {
   cursor: pointer;
   padding: 0.5rem;
 }
+
 #nav-toggle {
   display: none;
 }
+
 #nav-toggle:checked ~ .nav,
 .nav.open {
   display: flex;
 }
+
 .hero {
   background: #0055A4;
   color: white;
   text-align: center;
   padding: 4rem 1rem;
 }
+
 .hero-image {
   max-width: 100%;
   height: auto;
   margin-bottom: 1rem;
   border-radius: 8px;
 }
+
 .hero h1 {
   font-size: clamp(1.8rem, 5vw, 3rem);
   margin: 0;
 }
+
 .hero p {
   font-size: clamp(1rem, 3vw, 1.5rem);
   margin: 0.5rem 0;
 }
+
 .hero button {
   background: #FFC107;
   color: white;
@@ -80,35 +124,42 @@ body {
   border-radius: 4px;
   transition: background 0.3s;
 }
+
 .hero button:hover {
   background: #e0a800;
 }
+
 .services {
   background: white;
   color: #0055A4;
   text-align: center;
   padding: 3rem 1rem;
 }
+
 .services h1, .services h2 {
   font-size: clamp(1.4rem, 4vw, 2rem);
   margin-bottom: 1.5rem;
 }
+
 .services p {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   margin: 0.5rem auto;
   max-width: 600px;
 }
+
 .services ul {
   list-style: disc;
   padding-left: 2rem;
   max-width: 600px;
   margin: 1rem auto;
 }
+
 .services li {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   margin: 0.75rem 0;
   text-align: left;
 }
+
 .services a.button {
   display: inline-block;
   background: #FFC107;
@@ -119,19 +170,23 @@ body {
   margin-top: 1rem;
   transition: background 0.3s;
 }
+
 .services a.button:hover {
   background: #e0a800;
 }
+
 .section-image:not([src="placeholder.png"]) {
   max-width: 100%;
-  height: auto  auto;
+  height: auto;
   margin: 1rem auto;
   border-radius: 8px;
   display: block;
 }
+
 .section-image[src="placeholder.png"] {
   display: none;
 }
+
 .section-image {
   max-width: 100%;
   height: auto;
@@ -139,74 +194,89 @@ body {
   border-radius: 8px;
   display: block;
 }
+
 .about {
   background: #f5f5f5;
   color: #0055A4;
   text-align: center;
   padding: 3rem 1rem;
 }
+
 .about h2 {
   font-size: clamp(1.4rem, 4vw, 2rem);
   margin-bottom: 1.5rem;
 }
+
 .about p {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   margin: 0.5rem auto;
   max-width: 600px;
 }
+
 .why-choose-us {
   background: white;
   color: #0055A4;
   text-align: center;
   padding: 3rem 1rem;
 }
+
 .why-choose-us h2 {
   font-size: clamp(1.4rem, 4vw, 2rem);
   margin-bottom: 1.5rem;
 }
+
 .why-choose-us ul {
   list-style: disc;
   padding-left: 2rem;
   max-width: 600px;
   margin: 1rem auto;
 }
+
 .why-choose-us li {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   margin: 0.75rem 0;
   text-align: left;
 }
+
 .testimonials {
   background: #0055A4;
   color: white;
   text-align: center;
   padding: 3rem 1rem;
 }
+
 .testimonials h2 {
   font-size: clamp(1.4rem, 4vw, 2rem);
   margin-bottom: 1.5rem;
 }
+
 .testimonials p {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   margin: 0.5rem auto;
   max-width: 600px;
 }
+
 .testimonials em {
   font-style: italic;
 }
+
 .contact {
   background: #0055A4;
   color: white;
   text-align: center;
   padding: 3rem 1rem;
 }
+
 .contact h1, .contact h2 {
   font-size: clamp(1.4rem, 4vw, 2rem);
   margin-bottom: 1.5rem;
 }
+
 .contact p {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   margin: 0.5rem 0;
 }
+
 .contact form {
   max-width: 500px;
   margin: 1.5rem auto;
@@ -214,6 +284,7 @@ body {
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .contact input,
 .contact textarea {
   width: 100%;
@@ -222,10 +293,12 @@ body {
   font-size: 1rem;
   border-radius: 4px;
 }
+
 .contact textarea {
   resize: vertical;
   min-height: 100px;
 }
+
 .contact button {
   background: #FFC107;
   color: white;
@@ -236,9 +309,11 @@ body {
   border-radius: 4px;
   transition: background 0.3s;
 }
+
 .contact button:hover {
   background: #e0a800;
 }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -249,6 +324,7 @@ body {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
 .footer {
   background: #FFFFFF;
   color: #0055A4;
@@ -256,6 +332,7 @@ body {
   padding: 1.5rem;
   font-size: clamp(0.7rem, 1.5vw, 0.9rem);
 }
+
 @media (max-width: 768px) {
   .header {
     flex-direction: row;
@@ -271,13 +348,18 @@ body {
     width: 100%;
     background: #0055A4;
     position: absolute;
-    top: 5rem;
+    top: 80px; /* NEW: Adjust for sticky header height */
     left: 0;
     padding: 1rem;
   }
   .nav a {
     font-size: 1.2rem;
     padding: 0.5rem 0;
+  }
+  .logo {
+    /* NEW: Adjust logo for mobile */
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    left: 10px;
   }
   .hero {
     padding: 3rem 1rem;
@@ -292,6 +374,7 @@ body {
     max-width: 90%;
   }
 }
+
 @media (max-width: 480px) {
   .hero h1, .services h1, .about h2, .why-choose-us h2, .testimonials h2, .contact h1, .contact h2 {
     font-size: 1.8rem;
@@ -310,7 +393,12 @@ body {
   .contact textarea {
     padding: 0.5rem;
   }
+  .logo {
+    /* NEW: Further adjust logo for small screens */
+    font-size: 1rem;
+  }
 }
+
 @media (min-width: 1024px) {
   .header {
     padding: 2rem 5%;
