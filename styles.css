@@ -1,3 +1,9 @@
+:root {
+  --blue: #0055A4;
+  --yellow: #FFC107;
+  --dark-yellow: #e0a800;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,55 +13,55 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  padding-top: 80px; /* Default for header only */
+  padding-top: 80px;
 }
 
 body.banner-visible {
-  padding-top: 110px; /* Adjusted for banner (30px) + header (80px) */
+  padding-top: 110px;
 }
 
 .banner {
-  background: #FFC107; /* Yellow to match theme */
-  color: #0055A4; /* Blue text for contrast */
+  background: var(--yellow);
+  color: var(--blue);
   text-align: center;
-  padding: 0.5rem 1rem; /* Added right padding for close button */
+  padding: 0.5rem 1rem;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2000; /* Above header (z-index: 1000) */
-  display: flex; /* Default visibility */
-  justify-content: space-between; /* Move close button to right */
+  z-index: 2000;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .banner.hidden {
-  display: none; /* Hide when dismissed */
+  display: none;
 }
 
 .banner p {
   margin: 0;
-  flex-grow: 1; /* Ensure text stays centered */
+  flex-grow: 1;
   text-align: center;
 }
 
 .banner-close {
   background: none;
   border: none;
-  color: #0055A4;
+  color: var(--blue);
   font-size: 1.2rem;
   cursor: pointer;
-  padding: 0 0.5rem; /* Reduced padding for right alignment */
+  padding: 0 0.5rem;
   line-height: 1;
   transition: color 0.3s;
 }
 
 .banner-close:hover {
-  color: #e0a800; /* Darker yellow on hover */
+  color: var(--dark-yellow);
 }
 
 .header {
-  background: #0055A4;
+  background: var(--blue);
   color: white;
   padding: 1.5rem;
   display: flex;
@@ -66,15 +72,15 @@ body.banner-visible {
 
 .header.sticky {
   position: fixed;
-  top: 0; /* Default when no banner */
+  top: 0;
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: top 0.3s ease; /* Smooth shift */
+  transition: top 0.3s ease;
 }
 
 body.banner-visible .header.sticky {
-  top: 30px; /* Below banner when visible */
+  top: 30px;
 }
 
 .nav-container {
@@ -99,7 +105,7 @@ body.banner-visible .header.sticky {
 }
 
 .logo:hover {
-  color: #FFC107;
+  color: var(--yellow);
 }
 
 .nav {
@@ -116,7 +122,7 @@ body.banner-visible .header.sticky {
 }
 
 .nav a:hover {
-  color: #FFC107;
+  color: var(--yellow);
 }
 
 .hamburger {
@@ -139,93 +145,14 @@ body.banner-visible .header.sticky {
   opacity: 1;
 }
 
-.hero {
-  background: #0055A4;
+.hero, .testimonials, .contact {
+  background: var(--blue);
   color: white;
   text-align: center;
   padding: 4rem 1rem;
 }
 
-.hero-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-}
-
-.hero h1 {
-  font-size: clamp(1.8rem, 5vw, 3rem);
-  margin: 0;
-}
-
-.hero p {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  margin: 0.5rem 0;
-}
-
-.hero button {
-  background: #FFC107;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  cursor: pointer;
-  margin-top: 1rem;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-.hero button:hover {
-  background: #e0a800;
-}
-
-.services {
-  background: white;
-  color: #0055A4;
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.services h1, .services h2 {
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  margin-bottom: 1.5rem;
-}
-
-.services p {
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-  margin: 0.5rem auto;
-  max-width: 600px;
-}
-
-.services ul {
-  list-style: disc;
-  padding-left: 2rem;
-  max-width: 600px;
-  margin: 1rem auto;
-}
-
-.services li {
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-  margin: 0.75rem 0;
-  text-align: left;
-}
-
-.services a.button {
-  display: inline-block;
-  background: #FFC107;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 4px;
-  margin-top: 1rem;
-  transition: background 0.3s;
-}
-
-.services a.button:hover {
-  background: #e0a800;
-}
-
-.section-image:not([src="placeholder.png"]) {
+.hero-image, .section-image:not([src="placeholder.png"]) {
   max-width: 100%;
   height: auto;
   margin: 1rem auto;
@@ -237,119 +164,78 @@ body.banner-visible .header.sticky {
   display: none;
 }
 
-.section-image {
-  max-width: 100%;
-  height: auto;
-  margin: 1rem auto;
-  border-radius: 8px;
-  display: block;
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.hero p, .services p, .about p, .why-choose-us p, .testimonials p, .contact p {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  margin: 0.5rem auto;
+  max-width: 600px;
+}
+
+.hero button, .services a.button, .why-choose-us a.button, .contact button {
+  background: var(--yellow);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.hero button:hover, .services a.button:hover, .why-choose-us a.button:hover, .contact button:hover {
+  background: var(--dark-yellow);
+}
+
+.services, .why-choose-us {
+  background: white;
+  color: var(--blue);
+  text-align: center;
+  padding: 3rem 1rem;
 }
 
 .about {
   background: #f5f5f5;
-  color: #0055A4;
+  color: var(--blue);
   text-align: center;
   padding: 3rem 1rem;
 }
 
-.about h2 {
+.services h2, .about h2, .why-choose-us h2, .testimonials h2, .contact h2 {
   font-size: clamp(1.4rem, 4vw, 2rem);
   margin-bottom: 1.5rem;
 }
 
-.about p {
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-  margin: 0.5rem auto;
-  max-width: 600px;
-}
-
-.why-choose-us {
-  background: white;
-  color: #0055A4;
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.why-choose-us h2 {
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  margin-bottom: 1.5rem;
-}
-
-.why-choose-us ul {
+.services ul, .why-choose-us ul {
   list-style: disc;
   padding-left: 2rem;
   max-width: 600px;
   margin: 1rem auto;
-}
-
-.why-choose-us li {
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-  margin: 0.75rem 0;
   text-align: left;
 }
 
-.why-choose-us a.button {
-  display: inline-block;
-  background: #FFC107;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 4px;
-  margin-top: 1rem;
-  transition: background 0.3s;
-}
-
-.why-choose-us a.button:hover {
-  background: #e0a800;
-}
-
-.testimonials {
-  background: #0055A4;
-  color: white;
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.testimonials h2 {
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  margin-bottom: 1.5rem;
-}
-
-.testimonials p {
+.services li, .why-choose-us li {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-  margin: 0.5rem auto;
-  max-width: 600px;
+  margin: 0.75rem 0;
 }
 
 .testimonials em {
   font-style: italic;
 }
 
-.contact {
-  background: #0055A4;
-  color: white;
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.contact h1, .contact h2 {
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  margin-bottom: 1.5rem;
-}
-
-.contact p {
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-  margin: 0.5rem 0;
-}
-
 .contact a {
-  color: #FFC107;
+  color: var(--yellow);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .contact a:hover {
-  color: #e0a800;
+  color: var(--dark-yellow);
 }
 
 .contact form {
@@ -360,8 +246,7 @@ body.banner-visible .header.sticky {
   gap: 0.5rem;
 }
 
-.contact input,
-.contact textarea {
+.contact input, .contact textarea {
   width: 100%;
   padding: 0.75rem;
   border: none;
@@ -374,21 +259,6 @@ body.banner-visible .header.sticky {
   min-height: 100px;
 }
 
-.contact button {
-  background: #FFC107;
-  color: white;
-  border: none;
-  padding: 0.75rem;
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-.contact button:hover {
-  background: #e0a800;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -397,12 +267,11 @@ body.banner-visible .header.sticky {
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 
 .footer {
-  background: #FFFFFF;
-  color: #0055A4;
+  background: white;
+  color: var(--blue);
   text-align: center;
   padding: 1.5rem;
   font-size: clamp(0.7rem, 1.5vw, 0.9rem);
@@ -417,10 +286,6 @@ body.banner-visible .header.sticky {
     font-size: 1rem;
     padding: 0 0.25rem;
   }
-  .header {
-    flex-direction: row;
-    justify-content: flex-end;
-  }
   .hamburger {
     display: block;
   }
@@ -429,7 +294,7 @@ body.banner-visible .header.sticky {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background: #0055A4;
+    background: var(--blue);
     position: absolute;
     top: 80px;
     left: 0;
@@ -442,23 +307,17 @@ body.banner-visible .header.sticky {
   }
   #nav-toggle:checked ~ .nav,
   .nav.open {
-    opacity: 1;
     display: flex;
+    opacity: 1;
   }
   .logo {
     font-size: clamp(1rem, 2vw, 1.2rem);
     left: 10px;
   }
-  .hero {
-    padding: 3rem 1rem;
-  }
-  .services, .about, .why-choose-us, .testimonials, .contact {
+  .hero, .services, .about, .why-choose-us, .testimonials, .contact {
     padding: 2rem 1rem;
   }
-  .services ul, .why-choose-us ul {
-    max-width: 90%;
-  }
-  .contact form {
+  .services ul, .why-choose-us ul, .contact form {
     max-width: 90%;
   }
 }
@@ -472,7 +331,7 @@ body.banner-visible .header.sticky {
     font-size: 0.9rem;
     padding: 0 0.2rem;
   }
-  .hero h1, .services h1, .about h2, .why-choose-us h2, .testimonials h2, .contact h1, .contact h2 {
+  .hero h1, .services h2, .about h2, .why-choose-us h2, .testimonials h2, .contact h2 {
     font-size: 1.8rem;
   }
   .hero p, .services p, .about p, .why-choose-us p, .testimonials p, .contact p {
@@ -482,11 +341,7 @@ body.banner-visible .header.sticky {
     padding: 0.5rem 1rem;
     font-size: 1rem;
   }
-  .services li, .why-choose-us li {
-    padding-left: 0;
-  }
-  .contact input,
-  .contact textarea {
+  .contact input, .contact textarea {
     padding: 0.5rem;
   }
   .logo {
@@ -498,10 +353,7 @@ body.banner-visible .header.sticky {
   .banner {
     padding: 0.75rem 1rem;
   }
-  .header {
-    padding: 2rem 5%;
-  }
-  .hero, .services, .about, .why-choose-us, .testimonials, .contact {
-    padding: 4rem 5%;
+  .header, .hero, .services, .about, .why-choose-us, .testimonials, .contact {
+    padding: 2rem 5% 4rem;
   }
 }
