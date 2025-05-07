@@ -19,7 +19,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 2000; /* Above header (z-index: 1000) */
-  display: flex;
+  display: flex; /* Default visibility */
   justify-content: center;
   align-items: center;
   font-size: clamp(0.8rem, 2vw, 1rem);
