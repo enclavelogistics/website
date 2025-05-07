@@ -20,6 +20,10 @@ body.banner-visible {
   padding-top: 110px;
 }
 
+main.contact {
+  padding-top: 6rem; /* Increase top padding to push content down */
+}
+
 .banner {
   background: var(--yellow);
   color: var(--blue);
