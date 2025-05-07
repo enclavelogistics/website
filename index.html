@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <link rel="canonical" href="https://enclavelogistics.com/" />
   <meta name="google-site-verification" content="UWkw3R2-mHF2tv2JQ72v_g-SFBiHT-R4SRh7m">
   <meta name="description" content="Fast and reliable same-day courier service for businesses in Wakefield. Get a personal, B2B delivery experience with Enclave Logistics Limited.">
@@ -11,12 +10,25 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/hero-banner.jpg">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="msvalidate.01" content="6B5AFA8DA0AB6C8C2C4F7A0C18E6D27E">
   <title>Enclave Logistics | Same-Day B2B Courier in Wakefield</title>
   <link rel="stylesheet" href="./styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Enclave Logistics",
+    "telephone": "07883777217",
+    "email": "info@enclavelogistics.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Horbury, Wakefield",
+      "addressCountry": "UK"
+    }
+  }
+  </script>
 </head>
 <body>
   <header class="header sticky">
@@ -32,14 +44,14 @@
         <a href="#contact">Contact</a>
       </nav>
     </div>
-</header>
-  <div class="hero">
+  </header>
+  <div class="hero" id="home">
     <img src="images/hero-banner.jpg" alt="Courier van or delivery scene" class="hero-image">
     <h1>Same-Day Courier You Can Trust!</h1>
     <p>Fast, Reliable B2B Deliveries based in Wakefield</p>
     <button onclick="scrollToContact()">Get a Quote</button>
   </div>
-  <div class="services">
+  <div class="services" id="services">
     <h2>Our Services</h2>
     <img src="placeholder.png" alt="Delivery package or van" class="section-image">
     <p>We provide tailored B2B courier services to meet your business needs.</p>
@@ -48,37 +60,39 @@
       <li><strong>Local Expertise</strong>: Based in Horbury, our team knows Wakefield’s roads for faster, reliable service.</li>
       <li><strong>Flexible Solutions</strong>: From ad-hoc to multi-drop deliveries, we adapt to your schedule.</li>
       <li><strong>Secure Transport</strong>: Careful handling for high-value or sensitive goods.</li>
+      <li><strong>Dedicated Support</strong>: Personalized service with direct access to our team for your business needs.</li>
     </ul>
     <p>Ready to streamline your deliveries? Contact us today!</p>
-    <a href="contact.html" class="button">Contact Us</a>
+    <a href="#contact" class="button">Contact Us</a>
   </div>
-  <div class="about">
+  <div class="about" id="about">
     <h2>About Us</h2>
     <img src="placeholder.png" alt="Enclave Logistics team or warehouse" class="section-image">
-    <p>We offer a streamlined courier service dedicated to providing fast, reliable, and secure B2B deliveries across the UK. Founded by Kyle Ayton-Laplanche, our mission is to support local businesses with tailored logistics solutions that prioritize speed and customer satisfaction.</p>
-    <p>With our deep knowledge and commitment to excellence, we ensure your deliveries are handled with care and delivered on time, every time.</p>
+    <p>Enclave Logistics offers fast, reliable, and secure B2B deliveries across the UK. Founded by Kyle Ayton-Laplanche, we specialize in same-day courier services tailored to local businesses in Wakefield.</p>
+    <p>Our Horbury base and deep local knowledge ensure your deliveries are handled with care and delivered on time, every time.</p>
   </div>
-  <div class="why-choose-us">
+  <div class="why-choose-us" id="why-choose-us">
     <h2>Why Choose Us</h2>
     <ul>
-      <li><strong>Reliability</strong>: We pride ourselves on meeting your deadlines with precision.</li>
-      <li><strong>Local Knowledge</strong>: Our Horbury base gives us an edge in navigating Wakefield efficiently.</li>
-      <li><strong>Customer Focus</strong>: Your satisfaction is our priority, with personalized service for every client.</li>
-      <li><strong>Competitive Rates</strong>: High-quality service at prices that work for your business.</li>
+      <li><strong>Reliability</strong>: We meet your deadlines with precision.</li>
+      <li><strong>Local Knowledge</strong>: Horbury-based, we navigate Wakefield efficiently.</li>
+      <li><strong>Customer Focus</strong>: Personalized service for every client.</li>
+      <li><strong>Competitive Rates</strong>: High-quality service at affordable prices.</li>
     </ul>
+    <a href="#contact" class="button">Get Started</a>
   </div>
-  <div class="testimonials">
-    <h2>Reviews</h2>
+  <div class="testimonials" id="testimonials">
+    <h2>What Our Clients Say</h2>
     <p><em>"Enclave Logistics transformed our delivery process with their speed and reliability. Highly recommend!"</em> – Cargo2Go</p>
     <p><em>"Kyle and his team are professional and always go the extra mile. Best courier service in Wakefield!"</em> – ParcelPal</p>
-    <p>more reviews here</p>
+    <p><em>"Fast, secure, and cost-effective. Enclave is our go-to for same-day deliveries."</em> – LocalBiz</p>
   </div>
-  <div class="contact">
-    <h2>Contact Us</h2>
+  <div class="contact" id="contact">
+    <h2>Get in Touch</h2>
     <img src="placeholder.png" alt="Office or contact scene" class="section-image">
-    <p>Kyle Ayton-Laplanche</p>
-    <p>07883777217</p>
-    <p>info@enclavelogistics.com</p>
+    <p>Contact Kyle Ayton-Laplanche for fast, reliable courier services:</p>
+    <p><a href="tel:07883777217">07883777217</a></p>
+    <p><a href="mailto:info@enclavelogistics.com">info@enclavelogistics.com</a></p>
     <form action="https://formspree.io/f/movdddjq" method="POST">
       <label for="name" class="sr-only">Name</label>
       <input type="text" id="name" name="name" placeholder="Name" required>
