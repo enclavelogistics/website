@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
   const banner = document.getElementById('draftBanner');
-  const body = document.body;
   const navToggle = document.getElementById('nav-toggle');
 
   // Show banner on load
   banner.classList.remove('hidden');
-  body.classList.add('banner-visible');
+  document.body.classList.add('banner-visible');
 
   // Close banner
   document.querySelector('.banner-close').addEventListener('click', () => {
     banner.classList.add('hidden');
-    body.classList.remove('banner-visible');
+    document.body.classList.remove('banner-visible');
   });
 
   // Smooth scrolling for links and buttons
