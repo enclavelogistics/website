@@ -1,65 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Handle banner dismissal
   const banner = document.getElementById('draftBanner');
   const body = document.body;
+  const navToggle = document.getElementById('nav-toggle');
 
-  // Always show banner on load
+  // Show banner on load
   banner.classList.remove('hidden');
   body.classList.add('banner-visible');
 
-  // Close banner on click
+  // Close banner
   document.querySelector('.banner-close').addEventListener('click', () => {
     banner.classList.add('hidden');
     body.classList.remove('banner-visible');
   });
 
-  // Smooth scrolling for nav links, logo, and CTA buttons
-  document.querySelectorAll('.nav a, .logo, .services a.button, .why-choose-us a.button').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+  // Smooth scrolling for links and buttons
+  document.querySelectorAll('.nav a, .logo, .services a.button, .why-choose-us a.button, .hero button').forEach(el => {
+    el.addEventListener('click', e => {
       e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
+      const targetId = el.getAttribute('href')?.slice(1) || 'contact';
+      const target = document.getElementById(targetId);
       window.scrollTo({
-        top: targetElement.offsetTop - 80,
+        top: target.offsetTop - 80,
         behavior: 'smooth'
       });
-      // Close mobile menu if open
-      document.getElementById('nav-toggle').checked = false;
+      navToggle.checked = false;
     });
   });
 
-  // Smooth scrolling for "Get a Quote" button
-  document.querySelector('.hero button').addEventListener('click', function() {
-    const contactSection = document.getElementById('contact');
-    window.scrollTo({
-      top: contactSection.offsetTop - 80,
-      behavior: 'smooth'
-    });
-    // Close mobile menu if open
-    document.getElementById('nav-toggle').checked = false;
-  });
+  // Hamburger menu
+  document.querySelector('.hamburger').addEventListener('click', e => e.stopPropagation());
 
-  // Stop propagation on hamburger clicks to prevent click-outside interference
-  document.querySelector('.hamburger').addEventListener('click', function(e) {
-    e.stopPropagation();
-  });
-
-  // Close hamburger menu on click outside
-  document.addEventListener('click', function(e) {
-    const toggle = document.getElementById('nav-toggle');
-    const navContainer = document.querySelector('.nav-container');
-    if (toggle.checked && !navContainer.contains(e.target) && e.target !== toggle) {
-      toggle.checked = false;
+  // Close menu on outside click or scroll
+  let lastScrollTop = 0;
+  document.addEventListener('click', e => {
+    if (navToggle.checked && !document.querySelector('.nav-container').contains(e.target) && e.target !== navToggle) {
+      navToggle.checked = false;
     }
   });
 
-  // Close hamburger menu on scroll
-  let lastScrollTop = 0;
-  window.addEventListener('scroll', function() {
-    const toggle = document.getElementById('nav-toggle');
+  window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    if (toggle.checked && currentScroll !== lastScrollTop) {
-      toggle.checked = false;
+    if (navToggle.checked && currentScroll !== lastScrollTop) {
+      navToggle.checked = false;
     }
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   });
