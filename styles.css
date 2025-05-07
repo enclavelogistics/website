@@ -7,7 +7,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  padding-top: 80px; /* NEW: Offset for sticky header height */
+  padding-top: 80px;
 }
 
 .header {
@@ -21,23 +21,22 @@ body {
 }
 
 .header.sticky {
-  position: fixed; /* NEW: Make header sticky */
+  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensure header stays above content */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* NEW: Subtle shadow for depth */
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
   display: flex;
   align-items: center;
-  position: relative; /* NEW: Context for logo positioning */
-  width: 100%; /* Ensure container spans header */
-  justify-content: flex-end; /* Keep nav/hamburger right-aligned */
+  position: relative;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .logo {
-  /* NEW: Style for text logo */
   position: absolute;
   left: 20px;
   top: 50%;
@@ -46,12 +45,12 @@ body {
   font-weight: bold;
   color: white;
   text-decoration: none;
-  text-transform: uppercase; /* Match professional branding */
+  text-transform: uppercase;
   transition: color 0.3s;
 }
 
 .logo:hover {
-  color: #FFC107; /* Match nav hover color */
+  color: #FFC107;
 }
 
 .nav {
@@ -238,6 +237,21 @@ body {
   text-align: left;
 }
 
+.why-choose-us a.button {
+  display: inline-block;
+  background: #FFC107;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.why-choose-us a.button:hover {
+  background: #e0a800;
+}
+
 .testimonials {
   background: #0055A4;
   color: white;
@@ -275,6 +289,16 @@ body {
 .contact p {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   margin: 0.5rem 0;
+}
+
+.contact a {
+  color: #FFC107;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact a:hover {
+  color: #e0a800;
 }
 
 .contact form {
@@ -348,7 +372,7 @@ body {
     width: 100%;
     background: #0055A4;
     position: absolute;
-    top: 80px; /* NEW: Adjust for sticky header height */
+    top: 80px;
     left: 0;
     padding: 1rem;
   }
@@ -357,7 +381,6 @@ body {
     padding: 0.5rem 0;
   }
   .logo {
-    /* NEW: Adjust logo for mobile */
     font-size: clamp(1rem, 2vw, 1.2rem);
     left: 10px;
   }
@@ -382,7 +405,7 @@ body {
   .hero p, .services p, .about p, .why-choose-us p, .testimonials p, .contact p {
     font-size: 1.2rem;
   }
-  .hero button, .services a.button, .contact button {
+  .hero button, .services a.button, .why-choose-us a.button, .contact button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
   }
@@ -394,7 +417,6 @@ body {
     padding: 0.5rem;
   }
   .logo {
-    /* NEW: Further adjust logo for small screens */
     font-size: 1rem;
   }
 }
