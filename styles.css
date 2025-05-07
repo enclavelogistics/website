@@ -17,7 +17,7 @@ body {
 }
 
 body.banner-visible {
-  padding-top: 110px; /* Adjusted to account for banner height + header shift */
+  padding-top: 110px;
 }
 
 .banner {
@@ -33,9 +33,6 @@ body.banner-visible {
   justify-content: space-between;
   align-items: center;
   font-size: clamp(0.8rem, 2vw, 1rem);
-  max-height: 80px; /* Cap the banner height */
-  box-sizing: border-box;
-  overflow: hidden; /* Prevent content overflow */
 }
 
 .banner.hidden {
@@ -71,8 +68,6 @@ body.banner-visible {
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
-  min-height: 80px;
-  box-sizing: border-box;
 }
 
 .header.sticky {
@@ -85,7 +80,7 @@ body.banner-visible {
 }
 
 body.banner-visible .header.sticky {
-  top: 80px; /* Shift header below the 80px banner */
+  top: 30px;
 }
 
 .nav-container {
@@ -117,7 +112,6 @@ body.banner-visible .header.sticky {
   display: flex;
   gap: 1rem;
   transition: opacity 0.3s ease;
-  align-items: center;
 }
 
 .nav a {
@@ -156,10 +150,6 @@ body.banner-visible .header.sticky {
   color: white;
   text-align: center;
   padding: 4rem 1rem;
-}
-
-main.contact {
-  padding-top: 6rem;
 }
 
 .hero-image, .section-image:not([src="placeholder.png"]) {
@@ -287,16 +277,6 @@ main.contact {
   font-size: clamp(0.7rem, 1.5vw, 0.9rem);
 }
 
-.footer a {
-  color: var(--yellow);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer a:hover {
-  color: var(--dark-yellow);
-}
-
 @media (max-width: 768px) {
   .banner {
     padding: 0.75rem 1rem;
@@ -313,19 +293,17 @@ main.contact {
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
     background: var(--blue);
     position: absolute;
     top: 80px;
     left: 0;
-    padding: 1rem 0;
+    padding: 1rem;
     opacity: 0;
   }
   .nav a {
     font-size: 1.2rem;
     padding: 0.5rem 0;
-    text-align: center;
   }
   #nav-toggle:checked ~ .nav,
   .nav.open {
@@ -373,8 +351,7 @@ main.contact {
 
 @media (min-width: 1024px) {
   .banner {
-    padding: 0.5rem 1rem; /* Fixed padding to control height */
-    font-size: 1rem; /* Cap font-size at 1rem */
+    padding: 0.75rem 1rem;
   }
   .header, .hero, .services, .about, .why-choose-us, .testimonials, .contact {
     padding: 2rem 5% 4rem;
