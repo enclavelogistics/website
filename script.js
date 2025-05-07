@@ -25,14 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nav-toggle').checked = false;
   });
 
+  // Stop propagation on hamburger clicks to prevent click-outside interference
+  document.querySelector('.hamburger').addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent click from bubbling to document
+  });
+
   // Close hamburger menu on click outside
   document.addEventListener('click', function(e) {
-    const nav = document.querySelector('.nav');
     const toggle = document.getElementById('nav-toggle');
-    const hamburger = document.querySelector('.hamburger');
     const navContainer = document.querySelector('.nav-container');
     // Only close if menu is open and click is outside nav-container
-    if (toggle.checked && !navContainer.contains(e.target)) {
+    if (toggle.checked && !navContainer.contains(e.target) && e.target !== toggle) {
       toggle.checked = false;
     }
   });
@@ -47,12 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.checked = false;
     }
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  });
-
-  // Ensure hamburger button toggles menu
-  document.querySelector('.hamburger').addEventListener('click', function(e) {
-    const toggle = document.getElementById('nav-toggle');
-    // Toggle checkbox state manually to ensure it works
-    toggle.checked = !toggle.checked;
   });
 });
