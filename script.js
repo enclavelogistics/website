@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav');
     const toggle = document.getElementById('nav-toggle');
     const hamburger = document.querySelector('.hamburger');
-    // Check if click is outside nav and hamburger
-    if (!nav.contains(e.target) && !hamburger.contains(e.target) && toggle.checked) {
+    const navContainer = document.querySelector('.nav-container');
+    // Only close if menu is open and click is outside nav-container
+    if (toggle.checked && !navContainer.contains(e.target)) {
       toggle.checked = false;
     }
   });
@@ -41,10 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', function() {
     const toggle = document.getElementById('nav-toggle');
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    // Only close if menu is open and scrolling occurred
+    // Close menu if open and scrolling occurred
     if (toggle.checked && currentScroll !== lastScrollTop) {
       toggle.checked = false;
     }
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+
+  // Ensure hamburger button toggles menu
+  document.querySelector('.hamburger').addEventListener('click', function(e) {
+    const toggle = document.getElementById('nav-toggle');
+    // Toggle checkbox state manually to ensure it works
+    toggle.checked = !toggle.checked;
   });
 });
