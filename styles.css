@@ -7,6 +7,10 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  padding-top: 80px; /* Default for header only */
+}
+
+body.banner-visible {
   padding-top: 110px; /* Adjusted for banner (30px) + header (80px) */
 }
 
@@ -23,6 +27,10 @@ body {
   justify-content: center;
   align-items: center;
   font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.banner.hidden {
+  display: none; /* Hide when dismissed */
 }
 
 .banner p {
@@ -56,15 +64,15 @@ body {
 
 .header.sticky {
   position: fixed;
-  top: 30px; /* Below banner initially */
+  top: 0; /* Default when no banner */
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: top 0.3s ease; /* Smooth shift when banner closes */
+  transition: top 0.3s ease; /* Smooth shift */
 }
 
-.header.sticky.no-banner {
-  top: 0; /* Move to top when banner is closed */
+body.banner-visible .header.sticky {
+  top: 30px; /* Below banner when visible */
 }
 
 .nav-container {
