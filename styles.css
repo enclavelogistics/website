@@ -13,11 +13,11 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  padding-top: 48px; /* Adjusted to match header height (1rem padding + 1.2rem logo) */
+  padding-top: 60px; /* Adjusted for slimmer header */
 }
 
 body.banner-visible {
-  padding-top: 78px; /* Adjusted for banner (30px) + header height (48px) */
+  padding-top: 90px; /* Adjusted for banner + slimmer header */
 }
 
 .banner {
@@ -86,7 +86,7 @@ body.banner-visible .header.sticky {
 .nav-container {
   display: flex;
   align-items: center;
-  justify LOCK TABLES-content: space-between; /* Logo left, nav right */
+  justify-content: space-between; /* Logo left, nav right */
   width: 100%;
   max-width: 1200px; /* Constrain and center container */
   margin: 0 auto; /* Horizontally center within header */
@@ -293,7 +293,7 @@ body.banner-visible .header.sticky {
     width: 100%;
     background: var(--blue);
     position: absolute;
-    top: 48px; /* Adjusted for slimmer header */
+    top: 60px; /* Adjusted for slimmer header */
     left: 0;
     padding: 1rem;
     opacity: 0;
@@ -330,8 +330,7 @@ body.banner-visible .header.sticky {
   .hero h1, .services h2, .about h2, .why-choose-us h2, .testimonials h2, .contact h2 {
     font-size: 1.8rem;
   }
-  .hero p, .services p, .about p, .why-choose-us p, .testimonials p,ව
-  .contact p {
+  .hero p, .services p, .about p, .why-choose-us p, .testimonials p, .contact p {
     font-size: 1.2rem;
   }
   .hero a.button, .services a.button, .why-choose-us a.button, .contact button {
@@ -343,16 +342,6 @@ body.banner-visible .header.sticky {
   }
   .logo {
     font-size: 0.9rem;
-  }
-}
-
-/* Fix for white background under header in 770px–855px range */
-@media (min-width: 770px) and (max-width: 855px) {
-  body {
-    padding-top: 50px; /* Slightly increased to cover potential gap */
-  }
-  body.banner-visible {
-    padding-top: 80px; /* Adjusted for banner + header */
   }
 }
 
