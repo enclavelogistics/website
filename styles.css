@@ -225,6 +225,11 @@ body.banner-visible .header.sticky {
   font-style: italic;
 }
 
+.contact {
+  /* Added padding-bottom to ensure contact form is fully visible when scrolled to */
+  padding-bottom: 10rem;
+}
+
 .contact a {
   color: var(--yellow);
   text-decoration: none;
@@ -312,6 +317,10 @@ body.banner-visible .header.sticky {
   }
   .hero, .services, .about, .why-choose-us, .testimonials, .contact {
     padding: 2rem 1rem;
+  }
+  .contact {
+    /* Reduced padding-bottom for mobile to avoid excessive scrolling */
+    padding-bottom: 5rem;
   }
   .services ul, .why-choose-us ul, .contact form {
     max-width: 90%;
