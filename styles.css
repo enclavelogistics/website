@@ -13,11 +13,11 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  padding-top: 80px;
+  padding-top: 60px; /* Adjusted to accommodate slimmer header */
 }
 
 body.banner-visible {
-  padding-top: 110px;
+  padding-top: 90px; /* Adjusted for banner + slimmer header */
 }
 
 .banner {
@@ -63,9 +63,9 @@ body.banner-visible {
 .header {
   background: var(--blue);
   color: white;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem; /* Reduced padding for slimmer header */
   display: flex;
-  justify-content: flex-end;
+  justify-content: center; /* Center the nav-container */
   align-items: center;
   flex-wrap: wrap;
 }
@@ -80,23 +80,19 @@ body.banner-visible {
 }
 
 body.banner-visible .header.sticky {
-  top: 30px;
+  top: 30px; /* Unchanged, aligns with banner height */
 }
 
 .nav-container {
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: space-between; /* Space logo and nav evenly */
   width: 100%;
-  justify-content: flex-end;
+  max-width: 1200px; /* Constrain width for large screens */
 }
 
 .logo {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.2rem); /* Reduced logo font size */
   font-weight: bold;
   color: white;
   text-decoration: none;
@@ -110,14 +106,14 @@ body.banner-visible .header.sticky {
 
 .nav {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem; /* Increased gap for better spacing */
   transition: opacity 0.3s ease;
 }
 
 .nav a {
   color: white;
   text-decoration: none;
-  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem); /* Slightly smaller nav links */
   transition: color 0.3s;
 }
 
@@ -296,7 +292,7 @@ body.banner-visible .header.sticky {
     width: 100%;
     background: var(--blue);
     position: absolute;
-    top: 80px;
+    top: 60px; /* Adjusted for slimmer header */
     left: 0;
     padding: 1rem;
     opacity: 0;
@@ -311,8 +307,7 @@ body.banner-visible .header.sticky {
     opacity: 1;
   }
   .logo {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    left: 10px;
+    font-size: clamp(0.9rem, 1.8vw, 1rem); /* Smaller logo on mobile */
   }
   .hero, .services, .about, .why-choose-us, .testimonials, .contact {
     padding: 2rem 1rem;
@@ -345,11 +340,11 @@ body.banner-visible .header.sticky {
     padding: 0.5rem;
   }
   .logo {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (minominate-width: 1024px) {
   .banner {
     padding: 0.75rem 1rem;
   }
