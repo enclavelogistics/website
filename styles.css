@@ -13,11 +13,11 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  padding-top: 60px; /* Adjusted to accommodate slimmer header */
+  padding-top: 48px; /* Adjusted to match header height (1rem padding + 1.2rem logo) */
 }
 
 body.banner-visible {
-  padding-top: 90px; /* Adjusted for banner + slimmer header */
+  padding-top: 78px; /* Adjusted for banner (30px) + header height (48px) */
 }
 
 .banner {
@@ -63,7 +63,7 @@ body.banner-visible {
 .header {
   background: var(--blue);
   color: white;
-  padding: 1rem 1.5rem; /* Reduced padding for slimmer header */
+  padding: 1rem 1.5rem; /* Slimmer header */
   display: flex;
   justify-content: center; /* Center the nav-container */
   align-items: center;
@@ -80,19 +80,20 @@ body.banner-visible {
 }
 
 body.banner-visible .header.sticky {
-  top: 30px; /* Unchanged, aligns with banner height */
+  top: 30px; /* Aligns with banner height */
 }
 
 .nav-container {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Space logo and nav evenly */
+  justify LOCK TABLES-content: space-between; /* Logo left, nav right */
   width: 100%;
-  max-width: 1200px; /* Constrain width for large screens */
+  max-width: 1200px; /* Constrain and center container */
+  margin: 0 auto; /* Horizontally center within header */
 }
 
 .logo {
-  font-size: clamp(1rem, 2vw, 1.2rem); /* Reduced logo font size */
+  font-size: clamp(1rem, 2vw, 1.2rem); /* Reduced logo size */
   font-weight: bold;
   color: white;
   text-decoration: none;
@@ -106,14 +107,14 @@ body.banner-visible .header.sticky {
 
 .nav {
   display: flex;
-  gap: 1.5rem; /* Increased gap for better spacing */
+  gap: 1.5rem; /* Better spacing */
   transition: opacity 0.3s ease;
 }
 
 .nav a {
   color: white;
   text-decoration: none;
-  font-size: clamp(0.8rem, 1.8vw, 0.9rem); /* Slightly smaller nav links */
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem); /* Smaller nav links */
   transition: color 0.3s;
 }
 
@@ -170,7 +171,7 @@ body.banner-visible .header.sticky {
   max-width: 600px;
 }
 
-.hero button, .services a.button, .why-choose-us a.button, .contact button {
+.hero a.button, .services a.button, .why-choose-us a.button, .contact button {
   background: var(--yellow);
   color: white;
   border: none;
@@ -184,7 +185,7 @@ body.banner-visible .header.sticky {
   margin-top: 1rem;
 }
 
-.hero button:hover, .services a.button:hover, .why-choose-us a.button:hover, .contact button:hover {
+.hero a.button:hover, .services a.button:hover, .why-choose-us a.button:hover, .contact button:hover {
   background: var(--dark-yellow);
 }
 
@@ -292,7 +293,7 @@ body.banner-visible .header.sticky {
     width: 100%;
     background: var(--blue);
     position: absolute;
-    top: 60px; /* Adjusted for slimmer header */
+    top: 48px; /* Adjusted for slimmer header */
     left: 0;
     padding: 1rem;
     opacity: 0;
@@ -329,10 +330,11 @@ body.banner-visible .header.sticky {
   .hero h1, .services h2, .about h2, .why-choose-us h2, .testimonials h2, .contact h2 {
     font-size: 1.8rem;
   }
-  .hero p, .services p, .about p, .why-choose-us p, .testimonials p, .contact p {
+  .hero p, .services p, .about p, .why-choose-us p, .testimonials p,ව
+  .contact p {
     font-size: 1.2rem;
   }
-  .hero button, .services a.button, .why-choose-us a.button, .contact button {
+  .hero a.button, .services a.button, .why-choose-us a.button, .contact button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
   }
@@ -344,7 +346,17 @@ body.banner-visible .header.sticky {
   }
 }
 
-@media (minominate-width: 1024px) {
+/* Fix for white background under header in 770px–855px range */
+@media (min-width: 770px) and (max-width: 855px) {
+  body {
+    padding-top: 50px; /* Slightly increased to cover potential gap */
+  }
+  body.banner-visible {
+    padding-top: 80px; /* Adjusted for banner + header */
+  }
+}
+
+@media (min-width: 1024px) {
   .banner {
     padding: 0.75rem 1rem;
   }
