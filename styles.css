@@ -344,12 +344,3 @@ body.banner-visible .header.sticky {
     font-size: 0.9rem;
   }
 }
-
-@media (min-width: 1024px) {
-  .banner {
-    padding: 0.75rem 1rem;
-  }
-  .header, .hero, .services, .about, .why-choose-us, .testimonials, .contact {
-    padding: 2rem 5% 4rem;
-  }
-}
