@@ -320,7 +320,7 @@ body.banner-visible .header.sticky {
   }
   .contact {
     /* Reduced padding-bottom for mobile to avoid excessive scrolling */
-    padding-bottom: 5rem;
+    padding-bottom: 20rem;
   }
   .services ul, .why-choose-us ul, .contact form {
     max-width: 90%;
