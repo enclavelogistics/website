@@ -152,7 +152,7 @@ body.banner-visible .header.sticky {
 .hero-image, .section-image:not([src="placeholder.png"]) {
   max-width: 100%;
   height: auto;
-  margin: 1rem auto;
+  margin: 0 auto 1rem auto;
   border-radius: 8px;
   display: block;
 }
