@@ -308,7 +308,7 @@ body.banner-visible .header.sticky {
     width: 100%;
     background: var(--blue);
     position: absolute;
-    top: 60px; /* Adjusted for slimmer header */
+    top: 40px; /* Adjusted for slimmer header */
     left: 0;
     padding: 1rem;
     opacity: 0;
