@@ -146,7 +146,7 @@ body.banner-visible .header.sticky {
   background: var(--blue);
   color: white;
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .hero-image, .section-image:not([src="placeholder.png"]) {
