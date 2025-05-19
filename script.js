@@ -4,16 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('nav-toggle');
 
   // Show banner on load
-//  banner.classList.remove('hidden');
-//  body.classList.add('banner-visible');
+  banner.classList.remove('hidden');
+  body.classList.add('banner-visible');
 
   // Close banner and adjust header position
-//  document.querySelector('.banner-close').addEventListener('click', () => {
-//    banner.classList.add('hidden');
-//    body.classList.remove('banner-visible');
+  document.querySelector('.banner-close').addEventListener('click', () => {
+    banner.classList.add('hidden');
+    body.classList.remove('banner-visible');
     // Ensure smooth header transition when banner is closed
-//    document.querySelector('.header.sticky').style.transition = 'top 0.3s ease';
-//  });
+    document.querySelector('.header.sticky').style.transition = 'top 0.3s ease';
+  });
 
   // Smooth scrolling for links and buttons
   document.querySelectorAll('.nav a, .logo, .services a.button, .why-choose-us a.button, .hero a.button').forEach(el => {
