@@ -363,3 +363,30 @@ body.banner-visible .header.sticky {
     font-size: 0.9rem;
   }
 }
+
+.banner a {
+  color: var(--blue); /* Matches banner text color */
+  text-decoration: none; /* Removes default underline */
+  font-weight: bold; /* Makes the number stand out */
+  padding: 0.2rem 0.5rem; /* Subtle padding for touch targets */
+  border-radius: 3px; /* Soft corners for a button-like feel */
+  transition: background 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+.banner a:hover {
+  background: var(--dark-yellow); /* Darker yellow on hover */
+  color: white; /* White text on hover for contrast */
+}
+
+@media (max-width: 768px) {
+  .banner a {
+    padding: 0.15rem 0.4rem; /* Slightly smaller padding for mobile */
+    font-size: clamp(0.7rem, 1.8vw, 0.9rem); /* Matches banner text size */
+  }
+}
+
+@media (max-width: 480px) {
+  .banner a {
+    font-size: clamp(0.6rem, 1.5vw, 0.8rem); /* Matches banner text size */
+  }
+}
