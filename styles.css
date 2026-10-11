@@ -120,7 +120,7 @@ form.est{border:1px solid var(--line);box-shadow:0 6px 24px rgba(15,29,46,.06)}
 .est-price .vat{font-size:1rem;font-weight:600;color:var(--muted)}
 .est-res .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .est-res .btn{flex:1 1 12rem;white-space:normal;text-align:center}
-#estimate,#quote{scroll-margin-top:80px}
+
 /* ===== Dark theme: follows device setting ===== */
 @media (prefers-color-scheme: dark){
 :root{--ink:#e6ebf1;--muted:#a9b4c2;--bg:#13233a;--line:#263a55}
