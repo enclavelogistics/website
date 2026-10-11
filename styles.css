@@ -43,9 +43,6 @@ h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;margin:0 0 12px;color:var(
 .small{font-size:.85rem;color:var(--muted)}
 .ticks{list-style:none;padding:0;margin:0 0 24px}.ticks li{padding-left:30px;position:relative;margin-bottom:10px}
 .ticks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--accent-d);font-weight:800}
-.areas{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px;padding:0;list-style:none}
-.areas a,.areas span{display:inline-block;padding:10px 16px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600}
-.areas a:hover{background:var(--navy-2)}
 blockquote{margin:0}.quote{display:flex;flex-direction:column;justify-content:space-between}
 .quote p{color:var(--ink);font-style:italic}.quote footer{margin-top:14px;font-weight:700;color:var(--navy);font-size:.9rem}
 .badge{display:inline-block;font-size:.8rem;font-weight:700;background:#fff3dc;color:#7a4a00;border-radius:999px;padding:4px 12px;margin-bottom:24px}
@@ -89,3 +86,11 @@ form.qf{background:#fff;color:var(--ink);border-radius:16px;padding:28px;display
  .hero::after{display:none}
  .hero .wrap{padding:28px 20px 40px}
 }
+/* spec grid */
+dl.specs{margin:20px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+dl.specs>div{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:10px 14px}
+dl.specs>div.wide{grid-column:1/-1}
+dl.specs dt{font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+dl.specs dt span{display:inline-block;width:1.2em;color:var(--accent-d)}
+dl.specs dd{margin:2px 0 0;font-weight:800;color:var(--navy);font-size:1.05rem}
+@media (max-width:420px){dl.specs{grid-template-columns:1fr}}
