@@ -107,6 +107,20 @@ dl.specs dd{margin:2px 0 0;font-weight:800;color:var(--navy);font-size:1.05rem}
 .foot-logo{display:inline-block;background:#fff;border-radius:12px;padding:8px;margin-bottom:12px;line-height:0}.foot-logo img{width:64px;height:64px}
 @media (max-width:760px){.logo img{height:40px}}
 
+
+/* instant estimate */
+.est-sec{background:var(--bg)}
+form.est{border:1px solid var(--line);box-shadow:0 6px 24px rgba(15,29,46,.06)}
+.qf .err,.est-out .err{color:#b42318;font-size:.9rem;margin:6px 0 0;min-height:0}
+.qf [aria-invalid=true]{border-color:#b42318}
+.opt{font-weight:400;color:var(--muted)}
+.est-res{border-top:1px solid var(--line);padding-top:16px}
+.est-route{font-weight:700;margin:0 0 4px}.est-miles{margin:0 0 8px}
+.est-price{font-size:clamp(2rem,6vw,2.6rem);font-weight:800;color:var(--brand);margin:0 0 6px;line-height:1.1}
+.est-price .vat{font-size:1rem;font-weight:600;color:var(--muted)}
+.est-res .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.est-res .btn{flex:1 1 12rem;white-space:normal;text-align:center}
+#estimate,#quote{scroll-margin-top:80px}
 /* ===== Dark theme: follows device setting ===== */
 @media (prefers-color-scheme: dark){
 :root{--ink:#e6ebf1;--muted:#a9b4c2;--bg:#13233a;--line:#263a55}
@@ -134,4 +148,5 @@ form.qf{background:#16283d;color:var(--ink)}
 .page-hero{background:#0b1622}
 @media (max-width:760px){.nav{background:#0b1622;border-bottom-color:#1d2c40}}
 .foot-logo{background:none;padding:0;border-radius:0}.foot-logo img{width:72px;height:72px}
+.est-sec{background:#0f1d2e}form.est{border-color:#263a55;box-shadow:none}.est-price{color:#fff}.est-res{border-color:#263a55}.qf .err,.est-out .err{color:#ff9b8f}.qf [aria-invalid=true]{border-color:#ff9b8f}
 }

@@ -93,7 +93,7 @@
    "name": "How much does a delivery cost?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Every job is priced on quotation. Send the collection and delivery postcodes, timing and what's being moved using the form, by phone or on WhatsApp, and you'll get a clear price before we set off."
+    "text": "Use the instant estimate on this page for a guide price based on the driving miles from collection to delivery. Every price is confirmed before we set off: send the collection and delivery postcodes, timing and what's being moved using the form, by phone or on WhatsApp, and you'll get a clear price before we set off."
    }
   },
   {
@@ -177,7 +177,7 @@
 <span class="eyebrow">Same-day B2B courier · Horbury, Wakefield</span>
 <h1 id="hero-h">Same-day courier in Wakefield, Leeds &amp; West Yorkshire</h1>
 <p class="sub">One dedicated van and driver, straight from collection to delivery. No handovers, no hold-ups. Your urgent business deliveries collected and delivered the same day, with proof of delivery on every job.</p>
-<div class="cta-row"><a class="btn btn-accent" href="/#quote">Get a quick quote</a><a class="btn btn-ghost" href="tel:+447883777217">Call 07883 777217</a><a class="btn btn-wa" href="https://wa.me/447883777217">WhatsApp us</a></div>
+<div class="cta-row"><a class="btn btn-accent" href="/#estimate">Get a quick quote</a><a class="btn btn-ghost" href="tel:+447883777217">Call 07883 777217</a><a class="btn btn-wa" href="https://wa.me/447883777217">WhatsApp us</a></div>
 </div></div>
 </section>
 <div class="trust"><div class="wrap"><ul>
@@ -186,6 +186,19 @@
 <li><span class="ic" aria-hidden="true">UK</span><div><strong>UK-wide coverage</strong>Based in Wakefield, West Yorkshire</div></li>
 <li><span class="ic" aria-hidden="true">Ltd</span><div><strong>Registered company</strong>Companies House no. 14794234</div></li>
 </ul></div></div>
+
+<section id="estimate" class="est-sec" aria-labelledby="est-h"><div class="wrap grid g2" style="align-items:start">
+<div>
+<h2 id="est-h">Get an instant estimate</h2>
+<p class="lead">Enter the collection and delivery postcodes for a guide price based on the driving distance between them. We confirm every price by phone or WhatsApp before we set off.</p>
+</div>
+<form class="qf est" id="est-form" novalidate>
+<div><label for="e-from">Collection postcode</label><input id="e-from" name="from" autocomplete="postal-code" autocapitalize="characters" placeholder="e.g. WF4 5DR" required aria-describedby="e-from-err"><p class="err" id="e-from-err"></p></div>
+<div><label for="e-to">Delivery postcode</label><input id="e-to" name="to" autocomplete="off" autocapitalize="characters" placeholder="e.g. LS1 4DY" required aria-describedby="e-to-err"><p class="err" id="e-to-err"></p></div>
+<div class="full"><label for="e-when">Collection date and time <span class="opt">(optional)</span></label><input id="e-when" name="when" type="datetime-local"></div>
+<div class="full"><button class="btn btn-accent" type="submit" id="e-calc">Calculate</button></div>
+<div class="full est-out" id="est-out" aria-live="polite" aria-atomic="true"></div>
+</form></div></section>
 
 <section id="services" aria-labelledby="svc-h"><div class="wrap">
 <h2 id="svc-h">Services</h2>
@@ -241,7 +254,7 @@
 
 <section class="alt" id="faq" aria-labelledby="faq-h"><div class="wrap prose" style="max-width:860px">
 <h2 id="faq-h">Frequently asked questions</h2>
-<details><summary>How much does a delivery cost?</summary><p>Every job is priced on quotation. Send the collection and delivery postcodes, timing and what's being moved using the form, by phone or on WhatsApp, and you'll get a clear price before we set off.</p></details>
+<details><summary>How much does a delivery cost?</summary><p>Use the instant estimate on this page for a guide price based on the driving miles from collection to delivery. Every price is confirmed before we set off: send the collection and delivery postcodes, timing and what's being moved using the form, by phone or on WhatsApp, and you'll get a clear price before we set off.</p></details>
 <details><summary>When are you available?</summary><p>We're available 24/7, including evenings, weekends and bank holidays.</p></details>
 <details><summary>Do you do urgent same-day collections in Wakefield and Leeds?</summary><p>Yes. Urgent same-day work across Wakefield, Leeds and the rest of West Yorkshire is what we do, 24/7. Call or WhatsApp 07883 777217 with the postcodes and we'll tell you straight away when we can collect and confirm a price.</p></details>
 <details><summary>Can you take a job further afield?</summary><p>Yes. As well as local work in West Yorkshire, we run same-day deliveries anywhere in the UK, collected and driven direct with no handovers.</p></details>
@@ -253,7 +266,7 @@
 <section class="quote-sec" id="quote"><div class="wrap grid g2" style="align-items:start">
 <div class="contact-side">
 <h2>Get a quick quote</h2>
-<p class="lead">Every job is priced on quotation. Tell us what needs moving and we'll come back with a price fast. In a hurry? Call or WhatsApp.</p>
+<p class="lead">Already used the instant estimate? Add the details below and we'll confirm your price fast. In a hurry? Call or WhatsApp.</p>
 <p><strong>Phone:</strong> <a href="tel:+447883777217">07883 777217</a></p>
 <p><strong>WhatsApp:</strong> <a href="https://wa.me/447883777217">Message us on WhatsApp</a></p>
 <p><strong>Email:</strong> <a href="mailto:info@enclavelogistics.com">info@enclavelogistics.com</a></p>
@@ -269,6 +282,7 @@
 <div class="full"><label for="q-when">When do you need it collected?</label><input id="q-when" name="collection_datetime" type="datetime-local"></div>
 <div class="full"><label for="q-items">What's being moved?</label><textarea id="q-items" name="item_details" placeholder="e.g. 2 pallets, approx. size and weight, any special handling" required></textarea></div>
 <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+<input type="hidden" name="estimate_miles" id="q-miles"><input type="hidden" name="estimate_price" id="q-est">
 <input type="hidden" name="_subject" value="New quote request – enclavelogistics.com">
 <input type="hidden" name="_next" value="https://enclavelogistics.com/thank-you.html">
 <div class="full"><button class="btn btn-accent" type="submit">Send quote request</button>
