@@ -1,17 +1,4 @@
-# Allow Googlebot explicitly to ensure compatibility with Cloudflare
-User-agent: Googlebot
-Disallow: /thank-you.html
-
-# Allow other search engine bots
-User-agent: Bingbot
-Disallow: /thank-you.html
-
-# General crawler rules
 User-agent: *
 Disallow: /thank-you.html
-Disallow: /.github/
-Disallow: /README.md
-Disallow: /LICENSE
 
-# Sitemap reference
 Sitemap: https://enclavelogistics.com/sitemap.xml
