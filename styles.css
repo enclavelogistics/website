@@ -150,3 +150,4 @@ form.qf{background:#16283d;color:var(--ink)}
 .foot-logo{background:none;padding:0;border-radius:0}.foot-logo img{width:72px;height:72px}
 .est-sec{background:#0f1d2e}form.est{border-color:#263a55;box-shadow:none}.est-price{color:#fff}.est-res{border-color:#263a55}.qf .err,.est-out .err{color:#ff9b8f}.qf [aria-invalid=true]{border-color:#ff9b8f}
 }
+.photo-van img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 55%}
