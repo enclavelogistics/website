@@ -20,7 +20,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/styles.css">
-<link rel="preload" as="image" href="/images/hero-van-1920.webp" imagesrcset="/images/hero-van-mobile-800.webp 800w, /images/hero-van-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/images/hero-van-mobile-800.webp" media="(max-width:760px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/images/hero-van-1920.webp" media="(min-width:761px)" fetchpriority="high">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -295,7 +296,7 @@
 </main>
 <footer class="site-footer"><div class="wrap">
 <div class="cols">
-<div><span class="foot-logo"><picture><source srcset="/images/logo-emblem-dark.svg" media="(prefers-color-scheme: dark)"><img src="/images/logo-emblem.svg" alt="" width="64" height="64"></picture></span><h3>Enclave Logistics Limited</h3>
+<div><span class="foot-logo"><picture><source srcset="/images/logo-emblem-dark.svg" media="(prefers-color-scheme: dark)"><img src="/images/logo-emblem.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></picture></span><h3>Enclave Logistics Limited</h3>
 <p>Enclave, Daw Lane, Horbury, Wakefield, WF4 5DR<br>Same-day B2B courier · Available 24/7<br>Fully insured: £5m public liability and £50k goods in transit cover</p></div>
 <div><h3>Contact</h3><ul><li><a href="tel:+447883777217">07883 777217</a></li><li><a href="https://wa.me/447883777217">WhatsApp</a></li><li><a href="mailto:info@enclavelogistics.com">info@enclavelogistics.com</a></li></ul></div>
 <div><h3>Coverage</h3><ul><li>UK-wide, based in Wakefield, West Yorkshire</li><li><a href="/privacy.html">Privacy &amp; cookies</a></li></ul></div>
